@@ -1,0 +1,161 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Dr Tim Reidel
+Adan De Hoyos
+ 
+Further Information:
+http://diystream.cns.utexas.edu/
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+to help people figure out if they have a migraine or a headache
+ 
+Known Issues:
+results page will not display results
+-->
+
+     <head> 
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+<!--These vars are the numbers that will be manipulated by the questions-->
+<script> 
+        var h_count = 0;
+        var m_count = 0;
+
+	//these functions manipulate the variables depending on answers
+	//<!--This function adds 1 to the hcount for every answer-->
+	function headacehAdd(){
+           	h_count = h_count + 1;
+		
+   	}
+	//<!--This function adds 1 to the migrainecount for every answer-->
+        function migraineAdd(){
+            	m_count = m_count + 1;
+	
+        }
+	//this function should calculate and display the results in the last page using the variables
+	function resultsPage(){
+		var resultText = document.getElementById("results");
+		var headachePercentage = h_count/6.0 * 100;
+		var migrainePercentage = m_count/6.0 * 100;
+		resultText.innerHTML = "Probability it is a headache = " + headachePercentage +"%<br> Probability it is a migraine = " + migrainePercentage;
+	}
+	
+
+  </script>
+
+
+
+<style>	//<--this is the details for page dimensions and layout-->
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body><!--this creates the orange header for the page with the title of the page-->
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Migraines or headaches?</h1>
+</div>
+
+<div id="content" class="w3-container"> <!--This creates the container for text in this page the lines below are the text that is displayed-->
+	<p>Are you wondering if you suffer from migraines or if your head pain might be a symptom of something else? Take a quick survey to finde out!</p>
+
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one"><!--this creates the orange header for the page with the title of the page-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question #1</h1>
+	</div>
+
+    	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
+        	<p> Is your pain intense, throbbing, or pulsing?.</p>
+		<a href="#two" onclick="migraineAdd();" class="w3-btn w3-green w3-round"> Yes </a> <!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#two" onclick="headacheAdd();" class="w3-btn w3-red w3-round"> No </a>
+    	</div>
+</div>
+
+<div class="page" id="two"><!--this creates the orange header for the page with the title of the page-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #2</h1>
+	</div>
+
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
+		<p>has the pain lasted for more than a few days?</p>
+		<a href="#three" onclick="migraineAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#three" onclick="headacheAdd();" class="w3-btn w3-red w3-round"> No </a>
+	</div>
+</div>	
+	<div class="page" id="three"><!--this creates the orange header for the page with the title of the page-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #3</h1>
+		</div>
+	
+	<div id="content" class="w3-container"><!--container for text displayed below-->
+		<p>Does your pain come with an increased sensitivity to light?</p>
+		<a href="#four" onclick="migraineAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#four" onclick="headacheAdd();" class="w3-btn w3-red w3-round"> No </a>
+</div>
+	<div class="page" id="four"><!--this creates the orange header for the page with the title of the page-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #4</h1>
+	</div>
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
+		<p>Is the location of your pain consisten with the representation of migraines in the diagram below, or other types of headaches?</p>
+		<img src="https://www.colonialhealthcare.com/Portals/2798/headache-migraine.jpg" alt="headaches vs migraines"><!--this line codes for the image-->
+		<style>
+       		img, object{
+            		max-height:90%;
+        		max-width:90%;
+        		}
+		</style><!-- this is the image resize code to make sure that the image properly adjuststo screen size-->
+
+		<a href="#five" onclick="migraineAdd();" class="w3-btn w3-green w3-round"> Migraine </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#five" onclick="headacheAdd();" class="w3-btn w3-red w3-round"> Other </a>
+</div>
+	
+<div class="page" id="five"><!--this creates the orange header for the page with the title of the page-->
+	<div id="header" class="w3-bottom w3-container w3-flat carrot">
+		<h1>Results<h1>
+	</div>
+			
+	<div id="content" class="w3 container">
+		<p>Results</p>
+		<a  class = "w3-btn w3-black" onclick="resultsPage();"> Click here for results</a><!--this button calls the resultspage function which displays the results-->
+</div>			
+</div>		
+
+</body>
+</html>
