@@ -16,7 +16,7 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-to help people figure out if they have a migraine or a headache
+to help people figure out if they have a cold, the flu or covid 
  
 Known Issues:
 results page will not display results
@@ -38,18 +38,24 @@ results page will not display results
 	
 <!--These vars are the numbers that will be manipulated by the questions-->
 <script> 
-        var h_count = 0;
-        var m_count = 0;
+        var cold_count = 0;
+        var flu_count = 0;
+	var cov_count = 0;
 
 	//these functions manipulate the variables depending on answers
-	//<!--This function adds 1 to the hcount for every answer-->
-	function headacehAdd(){
-           	h_count = h_count + 1;
+	//<!--This function adds 1 to the cov for every answer-->
+	function covAdd(){
+           	cov_count = cov_count + 1;
 		
    	}
-	//<!--This function adds 1 to the migrainecount for every answer-->
-        function migraineAdd(){
-            	m_count = m_count + 1;
+	//<!--This function adds 1 to the flucount for every answer-->
+        function fluAdd(){
+            	flu_count = flu_count + 1;
+	
+        }
+	//<!--This function adds 1 to the coldcount for every answer-->
+        function fluAdd(){
+            	cold_count = cold_count + 1;
 	
         }
 	//this function should calculate and display the results in the last page using the variables
