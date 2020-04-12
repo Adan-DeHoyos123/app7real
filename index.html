@@ -54,8 +54,26 @@ results page will not display results
 	
         }
 	//<!--This function adds 1 to the coldcount for every answer-->
-        function fluAdd(){
+        function coldAdd(){
             	cold_count = cold_count + 1;
+	
+        }
+	//<!--This function adds 1 to the coldcount and flu count for every answer-->
+        function coldfluAdd(){
+            	cold_count = cold_count + 1;
+		flu_count = flu_count + 1;
+	
+        }
+	//<!--This function adds 1 to the coldcount and covid count for every answer-->
+        function covcoldAdd(){
+            	cold_count = cold_count + 1;
+		cov_count = cov_count + 1;
+	
+        }
+	//<!--This function adds 1 to the covid count and flu count for every answer-->
+        function fluAdd(){
+            	cov_count = cov_count + 1;
+		flu_count = flu_count + 1;
 	
         }
 	//this function should calculate and display the results in the last page using the variables
