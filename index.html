@@ -113,7 +113,7 @@ results page will not display results. This is the exact same base code as that 
 
 <body><!--this creates the orange header for the page with the title of the page-->
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold flu or covid?</h1>
+	<h1>Cold, flu, or covid?</h1>
 </div>
 
 <div id="content" class="w3-container"> <!--This creates the container for text in this page the lines below are the text that is displayed-->
@@ -132,7 +132,7 @@ results page will not display results. This is the exact same base code as that 
 
     	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
         	<p> Have you had your symptoms for more than 14 days?</p>
-		<a href="#two" onclick="cov_add();" class="w3-btn w3-green w3-round"> Yes </a> <!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#two" onclick="covAdd();" class="w3-btn w3-green w3-round"> Yes </a> <!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 		<a href="#two" class="w3-btn w3-red w3-round"> No </a>
     	</div>
 </div>
@@ -144,8 +144,8 @@ results page will not display results. This is the exact same base code as that 
 
 	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
 		<p>Do you have shortness of breath?</p>
-		<a href="#three" onclick="cov_add();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
-		<a href="#three" onclick="coldflu_add();" class="w3-btn w3-red w3-round"> No </a>
+		<a href="#three" onclick="covAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#three" onclick="coldfluAdd();" class="w3-btn w3-red w3-round"> No </a>
 	</div>
 </div>	
 	<div class="page" id="three"><!--this creates the orange header for the page with the title of the page-->
@@ -154,29 +154,30 @@ results page will not display results. This is the exact same base code as that 
 		</div>
 	
 	<div id="content" class="w3-container"><!--container for text displayed below-->
-		<p>Does your pain come with an increased sensitivity to light?</p>
-		<a href="#four" onclick="migraineAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
-		<a href="#four" onclick="headacheAdd();" class="w3-btn w3-red w3-round"> No </a>
+		<p>Have you been sneezing?</p>
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#four" onclick="covfluAdd();" class="w3-btn w3-red w3-round"> No </a>
 </div>
 	<div class="page" id="four"><!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question #4</h1>
 	</div>
 	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
-		<p>Is the location of your pain consisten with the representation of migraines in the diagram below, or other types of headaches?</p>
-		<img src="https://www.colonialhealthcare.com/Portals/2798/headache-migraine.jpg" alt="headaches vs migraines"><!--this line codes for the image-->
-		<style>
-       		img, object{
-            		max-height:90%;
-        		max-width:90%;
-        		}
-		</style><!-- this is the image resize code to make sure that the image properly adjuststo screen size-->
-
-		<a href="#five" onclick="migraineAdd();" class="w3-btn w3-green w3-round"> Migraine </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
-		<a href="#five" onclick="headacheAdd();" class="w3-btn w3-red w3-round"> Other </a>
+		<p>Do you have a runny or stuffy nose?</p>
+		<a href="#five" onclick="covfluAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#five" onclick="coldAdd();" class="w3-btn w3-red w3-round"> No </a>
+</div>
+<div class="page" id="five"><!--this creates the orange header for the page with the title of the page-->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #4</h1>
+	</div>
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
+		<p>Do you have diahrrea?</p>
+		<a href="#six" onclick="covfluAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-red w3-round"> No </a>
 </div>
 	
-<div class="page" id="five"><!--this creates the orange header for the page with the title of the page-->
+<div class="page" id="six"><!--this creates the orange header for the page with the title of the page-->
 	<div id="header" class="w3-bottom w3-container w3-flat carrot">
 		<h1>Results<h1>
 	</div>
