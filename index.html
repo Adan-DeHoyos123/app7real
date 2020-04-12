@@ -79,9 +79,11 @@ results page will not display results. This is the exact same base code as that 
 	//this function should calculate and display the results in the last page using the variables
 	function resultsPage(){
 		var resultText = document.getElementById("results");
-		var headachePercentage = h_count/6.0 * 100;
-		var migrainePercentage = m_count/6.0 * 100;
-		resultText.innerHTML = "Probability it is a headache = " + headachePercentage +"%<br> Probability it is a migraine = " + migrainePercentage;
+		var totalcount = cold_count + flu_count + cov_count;
+		var coldpercentage = cold_count/total_count;
+		var covpercentage = cov_count/total_count;
+		var flupercentage = flu_count/total_count;
+		resultText.innerHTML = "Probability it is a cold = " + cold_count +"%<br> Probability it is a flu = " + flu_count + "%<br> Probability it is COVID = " + cov_count;
 	}
 	
 
@@ -179,12 +181,10 @@ results page will not display results. This is the exact same base code as that 
 	
 <div class="page" id="six"><!--this creates the orange header for the page with the title of the page-->
 	<div id="header" class="w3-bottom w3-container w3-flat carrot">
-		<h1>Results<h1>
-	</div>
-			
+		<h1>Results processing<h1>
+	</div>		
 	<div id="content" class="w3 container">
-		<p>Results</p>
-		<a  class = "w3-btn w3-black" onclick="results"> Click here for results</a><!--this button calls the resultspage function which displays the results-->
+		<a href=  class = "w3-btn w3-black" onclick="resultsPage"> Click here for results</a><!--this button calls the resultspage function which displays the results-->
 </div>			
 </div>		
 
